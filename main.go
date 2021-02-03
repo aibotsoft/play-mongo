@@ -11,10 +11,11 @@ import (
 )
 
 type Podcast struct {
-	ID     primitive.ObjectID `bson:"_id,omitempty"`
-	Title  string             `bson:"title,omitempty"`
-	Author string             `bson:"author,omitempty"`
-	Tags   []string           `bson:"tags,omitempty"`
+	ID         primitive.ObjectID `bson:"_id,omitempty"`
+	Title      string             `bson:"title,omitempty"`
+	Author     string             `bson:"author,omitempty"`
+	NewFeature string             `bson:"fu,omitempty"`
+	Tags       []string           `bson:"tags,omitempty"`
 }
 
 func main() {
@@ -32,7 +33,6 @@ func main() {
 	podcastsCollection := database.Collection("podcasts")
 	fmt.Println(time.Since(start))
 	//episodesCollection := database.Collection("episodes")
-	//fmt.Print(client)
 	//err = client.Ping(ctx, readpref.Primary())
 	podcast := Podcast{
 		Title:  "The Polyglot Developer",
